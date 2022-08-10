@@ -1,1 +1,1 @@
-# Aurora的个人博客
+# Aurora
