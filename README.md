@@ -1,4 +1,4 @@
-# Deepin 20.6安装fcitx5
+## Deepin 20.6安装fcitx5
 
 #### 1.卸载系统自带的fcitx4
 
