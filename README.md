@@ -10,7 +10,7 @@ sudo apt autoremove 清理依赖包
 rm -rf ~/.config/fcitx 删除配置文件目录
 ```
 
-#### 2.安装Fcitx5输入法
+#### 2.安装fcitx5输入法
 
 ```
 sudo apt update 更新源
