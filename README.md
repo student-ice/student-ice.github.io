@@ -1,6 +1,6 @@
 # Deepin 20.6安装fcitx5
 
-# [deepin官网](https://www.deepin.org) [deepin论坛](https://bbs.deepin.org)
+## [deepin官网](https://www.deepin.org) [deepin论坛](https://bbs.deepin.org)
 
 #### 1.卸载系统自带的fcitx4
 
