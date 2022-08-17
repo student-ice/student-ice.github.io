@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/weather_style.css" />
+</head>
+
+<body>
+	<div id="box">
+		<div id="back">
+
+		</div>
+		<!-- 第一块区域 -->
+		<div id="logo">
+			<img src="img/logo.png" width="300" />
+		</div>
+		<!-- 第二块区域 -->
+		<div id="search">
+			<input id="cityid" type="text" placeholder="请输入城市名称,例如:上海" /><button id="sousuo">搜索</button>
+		</div>
+		<!-- 第三块区域 -->
+		<div id="info">
+			<ul id="content">
+
+			</ul>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		$("#sousuo").click(function () {
+			var city = $("#cityid").val();
+
+			$.ajax({
+				type: "get",
+				url: "https://yiketianqi.com/api?unescape=1&version=v1&appid=76438259&appsecret=2PAvYtOJ&city=" + city,
+				success: function (msg) {
+					var data = msg.data;
+					var html = "";
+					for (var i = 0; i < data.length; i++) {
+						var datainfo = data[i];
+						var li = 	'<li v-for="item in wea">' +
+										'<div class="wea">' +
+										datainfo.wea +
+										'</div>' +
+										'<div class="tem">' +
+										'高温 '+datainfo.tem1+'° ~ 低温 '+datainfo.tem2+'°' +
+										'</div>' +
+										'<div class="day">' +
+										datainfo.day +
+										'</div>' +
+									'</li>';
+						html = html + li;
+					}
+					$("#content").html(html);
+				}
+			});
+		});
+		
+		//https://yiketianqi.com/api?unescape=1&version=v6&appid=76438259&appsecret=2PAvYtOJ
+
+	</script>
+</body>
+
+</html>
